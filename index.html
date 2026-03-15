@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Online Project · আয়ের প্ল্যাটফর্ম</title>
+  <!-- ফন্ট: হিন্দ শিলিগুড়ি + পপিন্স -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- ফন্ট অওসাম 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+      background: #eef3f7;
+      color: #173e4a;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 16px 12px;
+    }
+
+    /* মোবাইল ফার্স্ট কার্ড */
+    .mobile-card {
+      max-width: 480px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 40px 40px 35px 35px;
+      box-shadow: 0 25px 45px -18px #0d4455, 0 8px 15px rgba(0,30,40,0.1);
+      overflow: hidden;
+      border: 1px solid rgba(152, 200, 220, 0.4);
+      transition: 0.2s;
+    }
+
+    /* হেডার */
+    .header-top {
+      background: linear-gradient(125deg, #054253 0%, #12758b 100%);
+      padding: 24px 22px 30px 22px;
+      color: white;
+      position: relative;
+    }
+
+    /* নাম ও ডাউনলোড একসাথে উপরে */
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0,0,0,0.15);
+      backdrop-filter: blur(4px);
+      padding: 8px 20px 8px 16px;
+      border-radius: 60px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .project-name i {
+      font-size: 1.9rem;
+      color: #ffdb7a;
+    }
+
+    .project-name h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    /* ডাউনলোড বাটন উপরে - MediaFire লিংক */
+    .download-top {
+      background: #ffbc1f;
+      border: none;
+      color: #043946;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 0 #a56600, 0 10px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: 0.06s linear;
+      border: 2px solid #ffe394;
+      text-decoration: none;
+    }
+
+    .download-top:active {
+      transform: translateY(7px);
+      box-shadow: 0 2px 0 #a56600, 0 10px 18px rgba(0,0,0,0.2);
+    }
+
+    .download-top i {
+      font-size: 1.6rem;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 8px 0 12px;
+      opacity: 0.95;
+    }
+
+    .price-chip-mobile {
+      background: #fee86c;
+      color: #043946;
+      padding: 14px 28px;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 800;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+      border: 2px solid white;
+      margin: 8px 0 15px;
+    }
+
+    .verify-badge-mobile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(4px);
+      padding: 10px 18px;
+      border-radius: 50px;
+      width: fit-content;
+      font-size: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    /* কন্টেন্ট বডি */
+    .content-mobile {
+      padding: 28px 20px 36px;
+    }
+
+    .section-title-m {
+      font-size: 1.9rem;
+      font-weight: 650;
+      color: #0b4455;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-title-m span {
+      background: #daecf3;
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #116d83;
+    }
+
+    /* গ্রিড ৩ কলাম */
+    .grid-m {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 25px;
+    }
+
+    .work-item {
+      background: #f6fbfe;
+      border-radius: 28px;
+      padding: 18px 6px;
+      text-align: center;
+      border: 1px solid #cbe2ed;
+      box-shadow: 0 4px 8px rgba(0,45,55,0.05);
+      transition: 0.1s;
+    }
+    .work-item:active {
+      background: #e1f0f7;
+      transform: scale(0.97);
+    }
+    .work-item .icon-m {
+      background: #d2e9f2;
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 1.6rem;
+      color: #0b6279;
+    }
+    .work-item span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #043946;
+      display: block;
+      line-height: 1.3;
+    }
+
+    /* স্পেশাল সেকশন */
+    .specials-m {
+      background: #e4f1f7;
+      border-radius: 50px;
+      padding: 22px 16px;
+      margin: 28px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 18px;
+      border: 1px solid #bbd7e6;
+    }
+    .specials-m .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #104d5c;
+    }
+    .specials-m .spec-item i {
+      background: white;
+      padding: 12px;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      color: #c26919;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ব্লক রো */
+    .block-row-m {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 28px 0;
+    }
+    .block-m {
+      background: #f3faff;
+      border-radius: 38px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid #c1dae7;
+    }
+    .block-m .block-icon {
+      background: #0c6379;
+      width: 68px;
+      height: 68px;
+      border-radius: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+    .block-m .block-text h4 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #063946;
+    }
+    .block-m .block-text p {
+      color: #2b6373;
+      font-size: 1.1rem;
+    }
+
+    /* ট্যাগ ক্লাউড */
+    .tag-m {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0 22px;
+    }
+    .tag-m .pill {
+      background: #ffffff;
+      border: 1px solid #add0e0;
+      border-radius: 40px;
+      padding: 8px 22px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #094c5c;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 5px #c9dde8;
+    }
+    .tag-m .pill i {
+      color: #c96d1d;
+    }
+
+    /* ডাউনলোড বাটন নিচে - MediaFire লিংক */
+    .download-bottom {
+      background: #ffbc1f;
+      border: none;
+      color: #04313d;
+      padding: 18px 32px;
+      border-radius: 60px;
+      font-size: 1.8rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 12px 0 #a56600, 0 16px 22px #0000002e;
+      cursor: pointer;
+      transition: 0.06s linear;
+      border: 2px solid #ffde9e;
+      margin: 10px 0 5px;
+      width: 100%;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .download-bottom:active {
+      transform: translateY(10px);
+      box-shadow: 0 4px 0 #a56600, 0 16px 22px #0000002e;
+    }
+
+    .footer-m {
+      background: #f1f9ff;
+      border-radius: 32px;
+      padding: 24px 20px;
+      text-align: center;
+      margin-top: 32px;
+      border: 1px solid #bee0ec;
+      font-size: 1rem;
+      color: #176c80;
+    }
+
+    @media (max-width: 380px) {
+      .grid-m {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .work-item span { font-size: 0.95rem; }
+      .project-name h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-card">
+
+    <!-- হেডার: Online Project + ডাউনলোড বাটন (উপরে) MediaFire লিংক সহ -->
+    <div class="header-top">
+      <div class="brand-row">
+        <div class="project-name">
+          <i class="fas fa-rocket"></i>
+          <h2>Online Project</h2>
+        </div>
+        <!-- ডাউনলোড বাটন উপরে - MediaFire লিংক -->
+        <a href="https://www.mediafire.com/file/3bilcb8i5b2gken/base.apk/file" target="_blank" class="download-top" rel="noopener noreferrer">
+          <i class="fas fa-download"></i> DOWNLOAD
+        </a>
+      </div>
+
+      <div class="tagline">শুধু ইনকাম করুন · প্রোফেশনাল প্ল্যাটফর্ম</div>
+      <div class="price-chip-mobile"><i class="fas fa-coins"></i> মাত্র ২০ টাকা</div>
+      <div class="verify-badge-mobile"><i class="fas fa-shield-check"></i> একাউন্ট ভেরিফাই করে সব কাজ খুলুন</div>
+    </div>
+
+    <!-- মূল বডি -->
+    <div class="content-mobile">
+
+      <div class="section-title-m">
+        <span><i class="fas fa-bolt"></i></span> আপনার ইনকাম অপশন
+      </div>
+
+      <!-- সমস্ত কাজের গ্রিড -->
+      <div class="grid-m">
+        <div class="work-item"><div class="icon-m"><i class="fas fa-envelope"></i></div><span>জি মেইল সেল</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fab fa-facebook-f"></i></div><span>ফেসবুক সেল</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fab fa-telegram-plane"></i></div><span>টেলিগ্রাম সেল</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fab fa-whatsapp"></i></div><span>Whatsapp সেল</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-ad"></i></div><span>এডস দেখে ইনকাম</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-repeat"></i></div><span>রিসেলিং</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-bullhorn"></i></div><span>জব পোস্ট</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-microchip"></i></div><span>মাইক্রেজব</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-people-arrows"></i></div><span>লিডার শীপ</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-user-plus"></i></div><span>টপ রেফার</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-sitemap"></i></div><span>চার জেনারেশন</span></div>
+        <div class="work-item"><div class="icon-m"><i class="fas fa-globe"></i></div><span>৪ জেনারেশন</span></div>
+      </div>
+
+      <!-- হাইলাইট: জেনারেশন, রেফার, লিডার -->
+      <div class="specials-m">
+        <div class="spec-item"><i class="fas fa-sitemap"></i> ৪ জেনারেশন</div>
+        <div class="spec-item"><i class="fas fa-trophy"></i> টপ রেফার</div>
+        <div class="spec-item"><i class="fas fa-crown"></i> লিডার শীপ</div>
+      </div>
+
+      <!-- রিসেলিং + লিডারশীপ ব্লক -->
+      <div class="block-row-m">
+        <div class="block-m">
+          <div class="block-icon"><i class="fas fa-rotate-right"></i></div>
+          <div class="block-text">
+            <h4>রিসেলিং</h4>
+            <p>যেকোনো কিছু রিসেল · আনলিমিটেড আয়</p>
+          </div>
+        </div>
+        <div class="block-m">
+          <div class="block-icon"><i class="fas fa-users-between-lines"></i></div>
+          <div class="block-text">
+            <h4>লিডার শীপ + চার জেনারেশন</h4>
+            <p>টিম বোনাস ও ৪ স্তর ইনকাম</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ট্যাগ ক্লাউড -->
+      <div class="tag-m">
+        <span class="pill"><i class="fas fa-eye"></i> এডস দেখে</span>
+        <span class="pill"><i class="fas fa-briefcase"></i> জব পোস্ট</span>
+        <span class="pill"><i class="fas fa-microchip"></i> মাইক্রেজব</span>
+        <span class="pill"><i class="fab fa-telegram"></i> টেলিগ্রাম</span>
+        <span class="pill"><i class="fab fa-whatsapp"></i> WhatsApp</span>
+        <span class="pill"><i class="fab fa-facebook"></i> ফেসবুক</span>
+        <span class="pill"><i class="fas fa-envelope"></i> জি মেইল</span>
+      </div>
+
+      <!-- নিচে ডাউনলোড বাটন (একই MediaFire লিংক) -->
+      <div style="text-align: center; margin: 30px 0 10px;">
+        <a href="https://www.mediafire.com/file/3bilcb8i5b2gken/base.apk/file" target="_blank" class="download-bottom" rel="noopener noreferrer">
+          <i class="fas fa-cloud-download-alt"></i> ডাউনলোড করুন
+        </a>
+        <p style="font-size: 0.95rem; color: #136d82; margin-top: 8px;"><i class="fas fa-circle-check"></i> ২০ টাকা ভেরিফিকেশন · সব কাজ খুলে যাবে</p>
+      </div>
+
+      <!-- ফুটার -->
+      <div class="footer-m">
+        <i class="fas fa-check-circle" style="color:#11778f; margin-right:6px;"></i> 
+        জি মেইল সেল · ফেসবুক সেল · টেলিগ্রাম সেল · WhatsApp সেল · এডস দেখে ইনকাম · রিসেলিং · জব পোস্ট · মাইক্রেজব · লিডার শীপ · টপ রেফার · চার জেনারেশন ইনকাম — সবকিছু ২০ টাকা ভেরিফিকেশনে। 
+      </div>
+
+    </div> <!-- content-mobile শেষ -->
+  </div> <!-- mobile-card শেষ -->
+</body>
+</html>
